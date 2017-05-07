@@ -1,0 +1,21 @@
+# Create enviorment variables named BROWSERSTACK_USERNAME giving browserstack username
+# and BROWSERSTACK_ACCESS_KEY with browserstack key.
+
+default:
+  suites:
+    default:
+      paths:
+        - %paths.base%/features
+      contexts:
+        - BrowserStackContext
+  extensions:
+    Behat\MinkExtension:
+      base_url: http://en.wikipedia.org/wiki/Main_Page
+      browser_stack:
+        capabilities:
+          browser: chrome
+    Drupal\DrupalExtension:
+      blackbox: ~
+      api_driver: "drupal"
+      drupal:
+        drupal_root: '/Applications/MAMP/htdocs/drupal8'

@@ -1,3 +1,4 @@
+@javascript
 Feature: Behat Example
   To show the example of the behat
 
